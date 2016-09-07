@@ -61,29 +61,16 @@
               0,0).attr(attrs);
               // Functions
               var click = function() {
-                if(marked == reg_id) {
-                  marked = null;
-                } else {
-                  marked = reg_id
-                  path.animate({fill: "#100"}, 500);
-                }
+                window.open(region.url);
               }
               var dblclick = function() {
                 window.open(region.url);
               }
               var over = function() {
-                if(marked == reg_id) {}
-                else {
-                  path.animate({fill: region.color}, 500);
-                  $(reg_id).show();
-                }
+                path.animate({fill: region.color}, 500);
               }
               var out = function() {
-                if(marked == reg_id) {}
-                else {
-                  path.animate({fill: "#333"}, 500);
-                  $(reg_id).hide();
-                }
+                path.animate({fill: "#333"}, 500);
               }
 
               path[0].onclick = click;
