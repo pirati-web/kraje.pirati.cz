@@ -5,7 +5,7 @@
     "height": 400,
     "scale": 0.75
   },
-  "colors": false,
+  "colors": true,
   "region_attrs": {
       "fill": "#333",
       "stroke": "#666",
