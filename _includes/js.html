@@ -20,8 +20,6 @@
       $(this).parent().addClass("js-button-toggled");
     }
   });
-</script>
-<script>
     window.onload = function() {
         var settings = {{ site.data.kraje-settings | jsonify }};
         var regions = {{ site.data.kraje | jsonify }};
@@ -40,7 +38,7 @@
           var li = $('<li/>').appendTo(reg_list);
           var span = $('<a/>').text(region.name).attr('href',region.url).appendTo(li);
 
-          // Create path for one region
+          /* Create path for one region */
           var custom_attrs = {"title": region.name};
           var attrs = $.extend(settings.region_attrs, custom_attrs);
 
@@ -59,7 +57,7 @@
               settings.size.scale,
               settings.size.scale,
               0,0).attr(attrs);
-              // Functions
+              /* Functions */
               var click = function() {
                 window.open(region.url);
               }
