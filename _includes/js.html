@@ -65,7 +65,7 @@
                 window.open(region.url);
               }
               var over = function() {
-                path.animate({fill: region.color}, 500);
+                path.animate({fill: region.color}, 500).attr({'cursor': "pointer"});
               }
               var out = function() {
                 path.animate({fill: "#333"}, 500);
