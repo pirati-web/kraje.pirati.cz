@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="row">
-  <img src="{{'banner_desktop.jpg' | prepend: 'assets/img/' | prepend: site.baseurl }}">
+    <img src="{{'banner_desktop.jpg' | prepend: 'assets/img/' | prepend: site.baseurl }}">
 </div>
 <section>
     <div class="row" style="background-color: lightgray;">
@@ -29,155 +29,160 @@ layout: default
 </section>
 
 <section class="o-section o-section--spaceBot">
-  <div class="row">
-    <div class="medium-12 columns">
-      <h2 class="o-section__heading">Piráti představují krajské lídry</h2>
-      <!-- https://www.pirati.cz/tiskove-zpravy/pirati_predstavuji_krajske_lidry -->
-      <p>Pirátská strana představuje lídry kandidátek pro krajské volby 2016, které letos proběhnou 7. a 8. října. Piráti kandidují ve všech krajích, ve většině republiky samostatně, v některých krajích spojili síly v rámci koalice se Stranou Zelených, Změnou či regionálními hnutími. Mezi kandidáty na post hejtmana se vyskytují například průkopník internetového podnikání v Česku Jiří Hlavenka nebo bývalý předseda Pirátů Lukáš Černohorský. Pro všechny představuje stěžejní téma otevřenost a transparence, které ve spoustě krajích v praxi stále doposud nefungují a vedou k vysoké zadluženosti krajů, druhé klíčové téma Pirátů pro krajské volby je modernizace státní správy. Společný program pro krajské volby 2016 jsme představili v červnu.</p>
-      <p style="font-weight: 550"><a>Hl. m. Praha</a> / <a>Středočeský kraj</a> / <a>Jihočeský kraj</a> /</p>
-    </div>
-  </div>
-  {% assign leaders = site.data.region-leaders %}
-  {% for leader in leaders %}
-  <div class="row">
-    <div class="medium-2 columns">
-      <img src="{{ leader.foto | prepend: 'assets/img/candidates/' | prepend: site.baseurl }}" class="centered" style="margin-top: 25px">
-    </div>
-    <div class="medium-10 columns">
-      <div class="row">
-        <div class="medium-5 columns">
-        <h3>{{ leader.name }}</h3>
-        {{ leader.povolani }}
-        </div>
-        <div class="medium-5 columns">
-        <h4>{{ leader.kraj }}</h4>
-        {{ leader.kandidatka }}
-        </div>
-        <div class="medium-2 columns">
-        </div>
-      </div>
-      <br>
-      <div class="row">
+    <div class="row">
         <div class="medium-12 columns">
-        <p>{{ leader.text }}</p>
-        <p><a href="">Profil kandidáta ></a></p>
-      </div>
-      </div>
+            <h2 class="o-section__heading">Piráti představují krajské lídry</h2>
+            <!-- https://www.pirati.cz/tiskove-zpravy/pirati_predstavuji_krajske_lidry -->
+            <p>Pirátská strana představuje lídry kandidátek pro krajské volby 2016, které letos proběhnou 7. a 8. října. Piráti kandidují ve všech krajích, ve většině republiky samostatně, v některých krajích spojili síly v rámci koalice se Stranou Zelených,
+                Změnou či regionálními hnutími. Mezi kandidáty na post hejtmana se vyskytují například průkopník internetového podnikání v Česku Jiří Hlavenka nebo bývalý předseda Pirátů Lukáš Černohorský. Pro všechny představuje stěžejní téma otevřenost
+                a transparence, které ve spoustě krajích v praxi stále doposud nefungují a vedou k vysoké zadluženosti krajů, druhé klíčové téma Pirátů pro krajské volby je modernizace státní správy. Společný program pro krajské volby 2016 jsme představili
+                v červnu.</p>
+            <p style="font-weight: 550"><a>Hl. m. Praha</a> / <a>Středočeský kraj</a> / <a>Jihočeský kraj</a> /</p>
+        </div>
     </div>
-  </div>
-  {% endfor %}
+
+{% assign leaders = site.data.region-leaders %}
+<div class="orbit" role="region" aria-label="Krajští lídři" data-orbit>
+    <ul class="orbit-container">
+      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+      {% for leader in leaders %}
+      <li class="orbit-slide{% if forloop.first%} is-active{% endif %}">
+          {% include candidate1.html param='leader' %}
+      </li>
+      {% endfor %}
+  </ul>
+  <nav class="orbit-bullets">
+    {% for leader in leaders %}
+    <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}">
+      <span class="show-for-sr">{{leader.kraj}}</span>
+    </button>
+    {% endfor %}
+  </nav>
+</div>
+
 </section>
 
 <section class="o-section o-section--spaceBot">
-  <div class="row">
-    <div class="medium-12 columns">
-      <section class="o-section o-section--spaceBot">
-        <h2 class="o-section__heading">Piráti představují kandidáty do senátu</h2>
-        <!-- https://www.pirati.cz/tiskove-zpravy/pirati_predstavuji_kandidaty_do_senatu -->
-        <p>Vedle krajských voleb se v třetině volebních obvodů konají i volby senátní, jejichž první kolo proběhne 7. a 8. října, druhé kolo následující víkend 15. a 16. října. Do voleb jde s podporou Pirátů osm různých kandidátů napříč republikou. Lukáš Černohorský, bývalý předseda Pirátů, navíc podal kandidaturu s cílem zpochybnit věkovou hranici pro senátní volby. Mezi kandidáty s podporou Pirátů najdeme aktivistku zaměřenou na zapojování veřejnosti do rozhodování, vedoucího Českého horologického spolku, který propojuje svoji vášeň pro informatiku se zájmem o staré hodiny, nebo zakladatele sdružení Podnikáme bez korupce.</p>
-        <p style="font-weight: 550"><a>Hl. m. Praha</a> / <a>Středočeský kraj</a> / <a>Jihočeský kraj</a> /</p>
-      </section>
-    </div>
-  </div>
-  <div class="row">
-    <div class="medium-2 columns">
-      <img src="{{ 'jiri-demel.png' | prepend: 'assets/img/candidates/' | prepend: site.baseurl }}" class="centered">
-    </div>
-    <div class="medium-10 columns">
-      <div class="row">
-        <div class="medium-5 columns">
-        <h3>Jiří Demel (59)</h3>
-        podnikatel v oblasti informačních technologií
-        </div>
-        <div class="medium-5 columns">
-        <h4>Nový Jičín</h4>
-        Piráti
-        </div>
-        <div class="medium-2 columns">
-        </div>
-      </div>
-      <br>
-      <div class="row">
+    <div class="row">
         <div class="medium-12 columns">
-        <p>Dlouholetý předseda pirátského krajského sdružení žije v Příboru. Brzy po vystudování začal podnikat v různých oblastech a následně zamířil do rychle se rozvíjejících informačních technologií. V Moravskoslezském kraji se věnuje aktivitám spojeným se záchranou zničené přírody. Se spolupráci s pirátským předsednictvem kraje sjednotil aktivity občanských sdružení vystupujících proti další devastaci krajiny těžbou uhlí. Toto úsilí přineslo podepsaní smlouvy České asociace proti těžbě uhlí. Jiří Demel podpořil i aktivity týkající se průmyslové zóny v&nbsp;Mošnově. Senát vnímá jako jediný orgán, který může v současnosti omezit vydávání nadbytečné a nekvalitní legislativy. Vymezuje se proti normám omezujícím naše svobody přijímané ve jménu falešného pocitu bezpečí.</p>
-        <p><a>Profil kandidáta ></a></p>
-      </div>
-      </div>
+            <section class="o-section o-section--spaceBot">
+                <h2 class="o-section__heading">Piráti představují kandidáty do senátu</h2>
+                <!-- https://www.pirati.cz/tiskove-zpravy/pirati_predstavuji_kandidaty_do_senatu -->
+                <p>Vedle krajských voleb se v třetině volebních obvodů konají i volby senátní, jejichž první kolo proběhne 7. a 8. října, druhé kolo následující víkend 15. a 16. října. Do voleb jde s podporou Pirátů osm různých kandidátů napříč republikou.
+                    Lukáš Černohorský, bývalý předseda Pirátů, navíc podal kandidaturu s cílem zpochybnit věkovou hranici pro senátní volby. Mezi kandidáty s podporou Pirátů najdeme aktivistku zaměřenou na zapojování veřejnosti do rozhodování, vedoucího
+                    Českého horologického spolku, který propojuje svoji vášeň pro informatiku se zájmem o staré hodiny, nebo zakladatele sdružení Podnikáme bez korupce.</p>
+                <p style="font-weight: 550"><a>Hl. m. Praha</a> / <a>Středočeský kraj</a> / <a>Jihočeský kraj</a> /</p>
+            </section>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="medium-2 columns">
+            <img src="{{ 'jiri-demel.png' | prepend: 'assets/img/candidates/' | prepend: site.baseurl }}" class="centered">
+        </div>
+        <div class="medium-10 columns">
+            <div class="row">
+                <div class="medium-5 columns">
+                    <h3>Jiří Demel (59)</h3> podnikatel v oblasti informačních technologií
+                </div>
+                <div class="medium-5 columns">
+                    <h4>Nový Jičín</h4> Piráti
+                </div>
+                <div class="medium-2 columns">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="medium-12 columns">
+                    <p>Dlouholetý předseda pirátského krajského sdružení žije v Příboru. Brzy po vystudování začal podnikat v různých oblastech a následně zamířil do rychle se rozvíjejících informačních technologií. V Moravskoslezském kraji se věnuje aktivitám
+                        spojeným se záchranou zničené přírody. Se spolupráci s pirátským předsednictvem kraje sjednotil aktivity občanských sdružení vystupujících proti další devastaci krajiny těžbou uhlí. Toto úsilí přineslo podepsaní smlouvy České asociace
+                        proti těžbě uhlí. Jiří Demel podpořil i aktivity týkající se průmyslové zóny v&nbsp;Mošnově. Senát vnímá jako jediný orgán, který může v současnosti omezit vydávání nadbytečné a nekvalitní legislativy. Vymezuje se proti normám
+                        omezujícím naše svobody přijímané ve jménu falešného pocitu bezpečí.</p>
+                    <p><a>Profil kandidáta ></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <div class="row">
     <section class="o-section o-section--spaceBot">
-      <h2 class="o-section__heading">Společný program pro krajské volby 2016</h2>
-      <!-- https://www.pirati.cz/volby/2016/program -->
-      <p>Naším cílem je kraj nové generace, kde může každý člověk svůj život prožít svobodně a naplno. Klíčem k prosperitě naší společnosti je otevřenost, transparentnost, svoboda informací, kvalitní veřejné služby, použití nových technologií a zapojení občanů do rozhodování. Piráti nabízí alternativu kraje bez korupce, nesmyslných dotací, politických trafik a klientelismu. Chceme, aby krajské úřady nebyly pro aktivní občany byrokratickou překážkou, nýbrž příležitostí zapojit se do veřejného dění a kultivace svého okolí. </p>
-      <div class="medium-12 large-8 columns">
-      <h1>Otevřeme hospodaření kraje</h1>
-      <h3>Zprůhledníme financování</h3>
-      <h4>Zveřejňujeme vše, co můžeme, ne jen to, co musíme.</h4>
-      <p>Podle <em>Transparency International</em> se až 25 % z veřejných rozpočtů vynakládá neúčelně, na nadbytečné výdaje a korupci. Zveřejňování smluv nyní již upravuje zákon o registru smluv, my ovšem chceme zveřejňovat smlouvy i nad rámec povinností dle tohoto zákona, tedy i ty s hodnotou nižší než 50 000 Kč. Zároveň hodláme zveřejňovat i faktury, které vypovídají o reálných částkách vyplacených na základě smluvních vztahů.</p>
-      <h4>Zavedeme transparentní účetnictví kraje.</h4>
-      <p>Občané dnes nemají šanci zjistit, kolik peněz bylo komu a za co zaplaceno. Chceme, aby kraj přešel k využívání otevřeného účetnictví všude tam, kde to zákon dovoluje. Všichni tak budou moci kontrolovat, za co konkrétně se finanční prostředky kraje utrácejí. Pro společnosti, ve kterých je většinovým vlastníkem kraj, musí platit stejné povinnosti otevřeného hospodaření jako pro kraj samotný.</p>
-      <h4>Všechny veřejné zakázky budou skutečně veřejné.</h4>
-      <p>Celou zadávací dokumentaci zveřejníme dostatečně dlouhou dobu předem na Internetu. Stejným způsobem budou průběžně zveřejňovány i další informace o veřejné zakázce. O výběrovém řízení se tak dozví mnohem více dodavatelů a nestane se, že se do záměrně utajovaného řízení přihlásí jen firma, které dal příslušný úředník vědět.</p>
-      <h4> Rozšíříme informace zveřejňované o dotacích.</h4>
-      <p>U poskytnutých dotací budeme zveřejňovat i jejich vyúčtování, aby každý viděl, kam veřejné prostředky nakonec doputovaly.</p>
-      <h4>Podpoříme internetové aukce a další moderní nástroje pro veřejné zakázky.</h4>
-      <p>Výběrová řízení na služby, které nabízí velký počet poskytovatelů, by měla probíhat formou internetové aukce. Kraj stanoví nejvyšší cenu, kterou je ochoten zaplatit, a způsob zohlednění kvality služeb v aukci. Nabídky dodavatelů budou okamžitě oceněny a zveřejněny. Dojde k urychlení výběrových řízení a každý občan bude mít přehled, kdo a za kolik měl o zakázku zájem. Dohodám firem mimo aukční systém nelze předejít, ale motivační faktor ke skutečné soutěži tuto nevýhodu vyvažuje. Najdeme vhodný, legislatvně možný, mix kritérií regionality, referencí a předchozí zkušenosti s dodavatelem takový, abychom zabránili například účelovému vzniku firem pro jedinou vypsanou zakázku.</p>
-    </div>
-    <div class="medium-12 large-4 columns">
-      <aside class="o-section">
-        <div class="o-section-inner o-section-inner--rightBlock">
-          <div class="o-section-block--spaceBot show-for-large">
-            <ul class="c-widget-accordion" data-accordion="" data-allow-all-closed="true">
-              <li class="c-widget-accordion-item is-active" data-accordion-item="">
-                <a href="#" class="c-widget-accordion-link">
-                  <span class="c-widget-accordion__title">Obsah</span>
-                  <span class="c-widget-accordion__icon c-widget-accordion__icon" aria-hidden="true">
+        <h2 class="o-section__heading">Společný program pro krajské volby 2016</h2>
+        <!-- https://www.pirati.cz/volby/2016/program -->
+        <p>Naším cílem je kraj nové generace, kde může každý člověk svůj život prožít svobodně a naplno. Klíčem k prosperitě naší společnosti je otevřenost, transparentnost, svoboda informací, kvalitní veřejné služby, použití nových technologií a zapojení
+            občanů do rozhodování. Piráti nabízí alternativu kraje bez korupce, nesmyslných dotací, politických trafik a klientelismu. Chceme, aby krajské úřady nebyly pro aktivní občany byrokratickou překážkou, nýbrž příležitostí zapojit se do veřejného
+            dění a kultivace svého okolí. </p>
+        <div class="medium-12 large-8 columns">
+            <h1>Otevřeme hospodaření kraje</h1>
+            <h3>Zprůhledníme financování</h3>
+            <h4>Zveřejňujeme vše, co můžeme, ne jen to, co musíme.</h4>
+            <p>Podle <em>Transparency International</em> se až 25 % z veřejných rozpočtů vynakládá neúčelně, na nadbytečné výdaje a korupci. Zveřejňování smluv nyní již upravuje zákon o registru smluv, my ovšem chceme zveřejňovat smlouvy i nad rámec povinností
+                dle tohoto zákona, tedy i ty s hodnotou nižší než 50 000 Kč. Zároveň hodláme zveřejňovat i faktury, které vypovídají o reálných částkách vyplacených na základě smluvních vztahů.</p>
+            <h4>Zavedeme transparentní účetnictví kraje.</h4>
+            <p>Občané dnes nemají šanci zjistit, kolik peněz bylo komu a za co zaplaceno. Chceme, aby kraj přešel k využívání otevřeného účetnictví všude tam, kde to zákon dovoluje. Všichni tak budou moci kontrolovat, za co konkrétně se finanční prostředky
+                kraje utrácejí. Pro společnosti, ve kterých je většinovým vlastníkem kraj, musí platit stejné povinnosti otevřeného hospodaření jako pro kraj samotný.</p>
+            <h4>Všechny veřejné zakázky budou skutečně veřejné.</h4>
+            <p>Celou zadávací dokumentaci zveřejníme dostatečně dlouhou dobu předem na Internetu. Stejným způsobem budou průběžně zveřejňovány i další informace o veřejné zakázce. O výběrovém řízení se tak dozví mnohem více dodavatelů a nestane se, že se
+                do záměrně utajovaného řízení přihlásí jen firma, které dal příslušný úředník vědět.</p>
+            <h4> Rozšíříme informace zveřejňované o dotacích.</h4>
+            <p>U poskytnutých dotací budeme zveřejňovat i jejich vyúčtování, aby každý viděl, kam veřejné prostředky nakonec doputovaly.</p>
+            <h4>Podpoříme internetové aukce a další moderní nástroje pro veřejné zakázky.</h4>
+            <p>Výběrová řízení na služby, které nabízí velký počet poskytovatelů, by měla probíhat formou internetové aukce. Kraj stanoví nejvyšší cenu, kterou je ochoten zaplatit, a způsob zohlednění kvality služeb v aukci. Nabídky dodavatelů budou okamžitě
+                oceněny a zveřejněny. Dojde k urychlení výběrových řízení a každý občan bude mít přehled, kdo a za kolik měl o zakázku zájem. Dohodám firem mimo aukční systém nelze předejít, ale motivační faktor ke skutečné soutěži tuto nevýhodu vyvažuje.
+                Najdeme vhodný, legislatvně možný, mix kritérií regionality, referencí a předchozí zkušenosti s dodavatelem takový, abychom zabránili například účelovému vzniku firem pro jedinou vypsanou zakázku.</p>
+        </div>
+        <div class="medium-12 large-4 columns">
+            <aside class="o-section">
+                <div class="o-section-inner o-section-inner--rightBlock">
+                    <div class="o-section-block--spaceBot show-for-large">
+                        <ul class="c-widget-accordion" data-accordion="" data-allow-all-closed="true">
+                            <li class="c-widget-accordion-item is-active" data-accordion-item="">
+                                <a href="#" class="c-widget-accordion-link">
+                                    <span class="c-widget-accordion__title">Obsah</span>
+                                    <span class="c-widget-accordion__icon c-widget-accordion__icon" aria-hidden="true">
                     <i class="fa fa-list"></i>
                   </span>
-                </a>
-                <div class="c-widget-accordion-content" data-tab-content="">
-                  <div class="c-widget-accordion-content-inner">
-                    <h4 class="c-widget-accordion-list__heading">Společný program pro<br>krajské volby 2016</h4>
-                    <ul class="c-widget-accordion-list">
-                      <li>
-                        <a href="#">Otevřeme hospodaření kraje</a>
-                        <ul>
-                          <li>
-                            <a href="#">Zprůhledníme financování</a>
-                          </li>
-                          <li>
-                            <a href="#">Budeme hospodařit efektivně</a>
-                          </li>
+                                </a>
+                                <div class="c-widget-accordion-content" data-tab-content="">
+                                    <div class="c-widget-accordion-content-inner">
+                                        <h4 class="c-widget-accordion-list__heading">Společný program pro<br>krajské volby 2016</h4>
+                                        <ul class="c-widget-accordion-list">
+                                            <li>
+                                                <a href="#">Otevřeme hospodaření kraje</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Zprůhledníme financování</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Budeme hospodařit efektivně</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Víme, jak řídit kraj zodpovědně</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Zapojíme občany do rozhodování</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Jednáme s lidmi otevřeně</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Usnadníme přístup k informacím</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Vyjdeme vstříc aktivním občanům</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
-                      </li>
-                      <li>
-                        <a href="#">Víme, jak řídit kraj zodpovědně</a>
-                      </li>
-                      <li>
-                        <a href="#">Zapojíme občany do rozhodování</a>
-                        <ul>
-                          <li>
-                            <a href="#">Jednáme s lidmi otevřeně</a>
-                          </li>
-                          <li>
-                            <a href="#">Usnadníme přístup k informacím</a>
-                          </li>
-                          <li>
-                            <a href="#">Vyjdeme vstříc aktivním občanům</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
+                    </div>
                 </div>
-              </li>
-            </ul>
-          </div>
+            </aside>
         </div>
-      </aside>
-    </div>
     </section>
 </div>

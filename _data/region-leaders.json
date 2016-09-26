@@ -2,19 +2,21 @@
   {
     "foto": "frantisek-kopriva.jpg",
     "name": "František Kopřiva",
-    "povolani": "student Fakulty elektrotechnické ČVUT",
-    "kraj": " Středočeský kraj",
+    "age": 20,
+    "profese": "student Fakulty elektrotechnické ČVUT",
+    "region": " Středočeský kraj",
     "kandidatka": "samostatná kandidátka Pirátů",
     "text": "Do politiky se aktivně zapojil už jako středoškolák, kdy pomáhal Pirátům s kontaktní kampaní při parlamentních volbách v roce 2013. Členem Pirátské strany se stal krátce po 18. narozeninách. Svůj věk kompenzuje zapálením a pracovitostí. Za největší problém ve svém kraji považuje korupci a zadluženost. V krajském zastupitelstvu by chtěl začít od menších kokrétních kroků. Rád by co nejdříve prosadil například video přenos a zveřejňování informací. Větší systémová řešení týkající se nemocnic, hromadné dopravy, záchranné služby či rozvoji středního školství budou samozřejmě následovat.",
-    "profil": "",
+    "profil": "https://strednicechy.pirati.cz/lide/frantisek-kopriva/",
   },
   {
     "foto": "michal-horak.jpg",
-    "name": "Milan Horák (51)",
-    "povolani": "systémový inženýr a databázový specialista",
-    "kraj": "Jihočeský kraj",
+    "name": "Milan Horák",
+    "age": 51,
+    "profese": "systémový inženýr a databázový specialista",
+    "region": "Jihočeský kraj",
     "kandidatka": "samostatná kandidátka Pirátů",
     "text": "Vystudoval automatizaci a elektronické počítače na Vojenské akademii v Brně a do roku 1992 pracoval jako IT odborník v armádě. Žije v Písku, kde pracuje jako databázový specialista. Ve volném čase aktivně působí v házenkářském oddílu píseckého Sokola jako trenér mládeže, sekretář oddílu a sportovní manažer interligového družstva žen. Kraj má být podle jeho názoru otevřený. Měl by podporovat podnikání, smysluplný a udržitelný rozvoj oblastí i aktivitu občanů. Za hlavní problémy považuje pokračující odliv lidí z malých obcí, pomalý rozvoj dopravní infrastruktury a nedostatek slušně placené práce bez nutnosti dojíždění.",
-    "profil": "",
+    "profil": "https://www.pirati.cz/lide/michal_horak",
   }
 ]
