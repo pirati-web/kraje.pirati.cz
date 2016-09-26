@@ -54,8 +54,8 @@ layout: default
     </ul>
     <nav class="orbit-bullets">
       {% for leader in leaders %}
-      <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}">
-        <span class="show-for-sr">{{leader.region}} / </span>
+      <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}" style="border-radius: 0%; width: auto;">
+        <span>{{leader.region}} / </span>
       </button>
       {% endfor %}
     </nav>
@@ -118,8 +118,8 @@ layout: default
                                 <a href="#" class="c-widget-accordion-link">
                                     <span class="c-widget-accordion__title">Obsah</span>
                                     <span class="c-widget-accordion__icon c-widget-accordion__icon" aria-hidden="true">
-                    <i class="fa fa-list"></i>
-                  </span>
+                                      <i class="fa fa-list"></i>
+                                    </span>
                                 </a>
                                 <div class="c-widget-accordion-content" data-tab-content="">
                                     <div class="c-widget-accordion-content-inner">
