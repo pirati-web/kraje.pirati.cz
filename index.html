@@ -5,33 +5,28 @@ layout: default
 <div class="row">
   <img src="{{'banner_desktop.jpg' | prepend: 'assets/img/' | prepend: site.baseurl }}">
 </div>
-
-<div class="row" style="background-color: lightgray;">
-  <div class="large-7 columns hide-for-small-only">
-      <div id="paper" class=""></div>
-  </div>
-  <div class="large-5 columns" style="margin-top: 40px;">
-    <div style="background-color: white;">
-      <h3>Kraje</h3>
-      <div class="o-section-inner o-section-inner--leftBlock">
-      <section class="o-section o-content">
-        <article>
-        <div class="row">
-          <div class="columns small-6">
-            <ul id="regions-list">
-            </ul>
-          </div>
-          <div class="columns small-6">
-            <ul id="regions-list-2">
-            </ul>
-          </div>
+<section>
+    <div class="row" style="background-color: lightgray;">
+        <div class="large-7 columns hide-for-small-only">
+            <div id="paper" class=""></div>
         </div>
-      </article>
-      </section>
+        <div class="large-5 columns" style="margin-top: 40px;">
+            <article class="c-BlogPosting" style="background-color: white; margin-top: 40px; margin-right: 20px">
+                <div class="row c-BlogPosting-content">
+                    <h3 style="margin-left: 45px">Kraje</h3>
+                    <div class="columns small-6">
+                        <ul id="regions-list" style="margin-left: 25px">
+                        </ul>
+                    </div>
+                    <div class="columns small-6">
+                        <ul id="regions-list-2">
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
     </div>
-    </div>
-  </div>
-</div>
+</section>
 
 <section class="o-section o-section--spaceBot">
   <div class="row">
@@ -42,19 +37,21 @@ layout: default
       <p style="font-weight: 550"><a>Hl. m. Praha</a> / <a>Středočeský kraj</a> / <a>Jihočeský kraj</a> /</p>
     </div>
   </div>
+  {% assign leaders = site.data.region-leaders %}
+  {% for leader in leaders %}
   <div class="row">
     <div class="medium-2 columns">
-      <img src="{{ 'michal-horak.jpg' | prepend: 'assets/img/candidates/' | prepend: site.baseurl }}" class="centered">
+      <img src="{{ leader.foto | prepend: 'assets/img/candidates/' | prepend: site.baseurl }}" class="centered" style="margin-top: 25px">
     </div>
     <div class="medium-10 columns">
       <div class="row">
         <div class="medium-5 columns">
-        <h3>Milan Horák (51)</h3>
-        systémový inženýr a databázový specialista
+        <h3>{{ leader.name }}</h3>
+        {{ leader.povolani }}
         </div>
         <div class="medium-5 columns">
-        <h4>Jihočeský kraj</h4>
-        samostatná kandidátka Pirátů
+        <h4>{{ leader.kraj }}</h4>
+        {{ leader.kandidatka }}
         </div>
         <div class="medium-2 columns">
         </div>
@@ -62,12 +59,13 @@ layout: default
       <br>
       <div class="row">
         <div class="medium-12 columns">
-        <p>Vystudoval automatizaci a elektronické počítače na Vojenské akademii v Brně a do roku 1992 pracoval jako IT odborník v armádě. Žije v&nbsp;Písku, kde pracuje jako databázový specialista. Ve volném čase aktivně působí v házenkářském oddílu píseckého Sokola jako trenér mládeže, sekretář oddílu a sportovní manažer interligového družstva žen. Kraj má být podle jeho názoru otevřený. Měl by podporovat podnikání, smysluplný a udržitelný rozvoj oblastí i aktivitu občanů. Za hlavní problémy považuje pokračující odliv lidí z malých obcí, pomalý rozvoj dopravní infrastruktury a nedostatek slušně placené práce bez nutnosti dojíždění.</p>
-        <p><a>Profil kandidáta ></a></p>
+        <p>{{ leader.text }}</p>
+        <p><a href="">Profil kandidáta ></a></p>
       </div>
       </div>
     </div>
   </div>
+  {% endfor %}
 </section>
 
 <section class="o-section o-section--spaceBot">
