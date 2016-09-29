@@ -43,7 +43,14 @@ layout: default
 
   {% assign leaders = site.data.region-leaders %}
   <div class="orbit" role="region" aria-label="Krajští lídři" data-orbit>
-      <ul class="orbit-container">
+    <nav class="orbit-bullets" style="">
+      {% for leader in leaders %}
+      <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}">
+        <span>{{leader.region}} / </span>
+      </button>
+      {% endfor %}
+    </nav>
+    <ul class="orbit-container">
         <button class="orbit-previous"><span class="show-for-sr">Předchozí</span>&#9664;&#xFE0E;</button>
         <button class="orbit-next"><span class="show-for-sr">Další</span>&#9654;&#xFE0E;</button>
         {% for leader in leaders %}
@@ -52,13 +59,7 @@ layout: default
         </li>
         {% endfor %}
     </ul>
-    <nav class="orbit-bullets">
-      {% for leader in leaders %}
-      <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}" style="border-radius: 0%; width: auto;">
-        <span>{{leader.region}} / </span>
-      </button>
-      {% endfor %}
-    </nav>
+
   </div>
 </section>
 
