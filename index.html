@@ -29,6 +29,7 @@ layout: default
 </section>
 
 <section class="o-section o-section--spaceBot">
+  {% assign leaders = site.data.region-leaders %}
     <div class="row">
         <div class="medium-12 columns">
             <h2 class="o-section__heading">Piráti představují krajské lídry</h2>
@@ -37,19 +38,11 @@ layout: default
                 Změnou či regionálními hnutími. Mezi kandidáty na post hejtmana se vyskytují například průkopník internetového podnikání v Česku Jiří Hlavenka nebo bývalý předseda Pirátů Lukáš Černohorský. Pro všechny představuje stěžejní téma otevřenost
                 a transparence, které ve spoustě krajích v praxi stále doposud nefungují a vedou k vysoké zadluženosti krajů, druhé klíčové téma Pirátů pro krajské volby je modernizace státní správy. Společný program pro krajské volby 2016 jsme představili
                 v červnu.</p>
-            <p style="font-weight: 550"><a>Hl. m. Praha</a> / <a>Středočeský kraj</a> / <a>Jihočeský kraj</a> /</p>
+            <p style="font-weight: 550">{% for leader in leaders %}<a href="">{{ leader.region}}</a> / {% endfor %}</p>
         </div>
     </div>
 
-  {% assign leaders = site.data.region-leaders %}
   <div class="orbit" role="region" aria-label="Krajští lídři" data-orbit>
-    <nav class="orbit-bullets" style="">
-      {% for leader in leaders %}
-      <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}">
-        <span>{{leader.region}} / </span>
-      </button>
-      {% endfor %}
-    </nav>
     <ul class="orbit-container">
         <button class="orbit-previous"><span class="show-for-sr">Předchozí</span>&#9664;&#xFE0E;</button>
         <button class="orbit-next"><span class="show-for-sr">Další</span>&#9654;&#xFE0E;</button>
@@ -59,7 +52,13 @@ layout: default
         </li>
         {% endfor %}
     </ul>
-
+    <nav class="orbit-bullets" style="">
+      {% for leader in leaders %}
+      <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}">
+        <span class="show-for-sr">{{leader.region}}</span>
+      </button>
+      {% endfor %}
+    </nav>
   </div>
 </section>
 
@@ -91,7 +90,7 @@ layout: default
     <nav class="orbit-bullets">
       {% for leader in leaders %}
       <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}">
-        <span>{{leader.region}} / </span>
+        <span class="show-for-sr">{{leader.region}}</span>
       </button>
       {% endfor %}
     </nav>
@@ -110,58 +109,6 @@ layout: default
         <div class="medium-12 large-8 columns">
             {% include program.html %}
         </div>
-        <div class="medium-12 large-4 columns">
-            <aside class="o-section">
-                <div class="o-section-inner o-section-inner--rightBlock">
-                    <div class="o-section-block--spaceBot show-for-large">
-                        <ul class="c-widget-accordion" data-accordion="" data-allow-all-closed="true">
-                            <li class="c-widget-accordion-item is-active" data-accordion-item="">
-                                <a href="#" class="c-widget-accordion-link">
-                                    <span class="c-widget-accordion__title">Obsah</span>
-                                    <span class="c-widget-accordion__icon c-widget-accordion__icon" aria-hidden="true">
-                                      <i class="fa fa-list"></i>
-                                    </span>
-                                </a>
-                                <div class="c-widget-accordion-content" data-tab-content="">
-                                    <div class="c-widget-accordion-content-inner">
-                                        <h4 class="c-widget-accordion-list__heading">Společný program pro<br>krajské volby 2016</h4>
-                                        <ul class="c-widget-accordion-list">
-                                            <li>
-                                                <a href="#">Otevřeme hospodaření kraje</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">Zprůhledníme financování</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Budeme hospodařit efektivně</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Víme, jak řídit kraj zodpovědně</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Zapojíme občany do rozhodování</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">Jednáme s lidmi otevřeně</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Usnadníme přístup k informacím</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Vyjdeme vstříc aktivním občanům</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-        </div>
+            {% include program/content.html %}
     </section>
 </div>
