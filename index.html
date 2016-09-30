@@ -63,6 +63,7 @@ layout: default
 </section>
 
 <section class="o-section o-section--spaceBot">
+  {% assign leaders = site.data.senate-candidates %}
   <div class="row">
       <div class="medium-12 columns">
           <section class="o-section o-section--spaceBot">
@@ -71,12 +72,11 @@ layout: default
               <p>Vedle krajských voleb se v třetině volebních obvodů konají i volby senátní, jejichž první kolo proběhne 7. a 8. října, druhé kolo následující víkend 15. a 16. října. Do voleb jde s podporou Pirátů osm různých kandidátů napříč republikou.
                   Lukáš Černohorský, bývalý předseda Pirátů, navíc podal kandidaturu s cílem zpochybnit věkovou hranici pro senátní volby. Mezi kandidáty s podporou Pirátů najdeme aktivistku zaměřenou na zapojování veřejnosti do rozhodování, vedoucího
                   Českého horologického spolku, který propojuje svoji vášeň pro informatiku se zájmem o staré hodiny, nebo zakladatele sdružení Podnikáme bez korupce.</p>
-              <p style="font-weight: 550"><a>Hl. m. Praha</a> / <a>Středočeský kraj</a> / <a>Jihočeský kraj</a> /</p>
+            <p style="font-weight: 550">{% for leader in leaders %}<a href="">{{ leader.region}}</a> / {% endfor %}</p>
           </section>
       </div>
   </div>
 
-  {% assign leaders = site.data.senate-candidates %}
   <div class="orbit" role="region" aria-label="Krajští lídři" data-orbit>
       <ul class="orbit-container">
         <button class="orbit-previous"><span class="show-for-sr">Předchozí</span>&#9664;&#xFE0E;</button>
