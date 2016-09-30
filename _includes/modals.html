@@ -1,8 +1,28 @@
 {% for leader in leaders %}
-<div class="reveal" id="{{leader.id}}" data-reveal>
-  <h1>{{leader.name}}</h1>
-  <p class="lead">{{leader.profese}}</p>
-  <p>{{leader.text}}</p>
+<div class="reveal large" id="{{leader.id}}" data-reveal>
+  <div class="row">
+    <div class="columns medium-3">
+      <img src="{{ leader.foto | prepend: 'assets/img/candidates/' | prepend: site.baseurl }}" class="centered" style="margin-top: 20px;">
+    </div>
+    <div class="columns medium-9">
+      <div class="row">
+        <div class="columns medium-6">
+          <h3>{{leader.name}} ({{leader.age}})</h3>
+          {{leader.profese}}
+        </div>
+        <div class="columns medium-6">
+          <h4>{{leader.region}}</h4>
+          {% if leader.kandidatka %} {{leader.kandidatka}} {% else %} {{leader.strana}} {% endif %}
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="columns medium-12">
+          <p>{{leader.text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
