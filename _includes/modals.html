@@ -1,0 +1,10 @@
+{% for leader in leaders %}
+<div class="reveal" id="{{leader.id}}" data-reveal>
+  <h1>{{leader.name}}</h1>
+  <p class="lead">{{leader.profese}}</p>
+  <p>{{leader.text}}</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}

@@ -8,7 +8,10 @@
                 <h3>{{leader.name}} ({{leader.age}})</h3> {{leader.profese}}
             </div>
             <div class="medium-5 columns">
-                <h4>{{leader.region}}</h4> {{leader.kandidatka}}
+                <h4>{{leader.region}}</h4>
+                {% if leader.kandidatka %} {{leader.kandidatka}} {% else %}
+                {{leader.strana}}
+                {% endif %}
             </div>
             <div class="medium-2 columns">
             </div>

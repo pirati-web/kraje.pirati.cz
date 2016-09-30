@@ -1,5 +1,6 @@
 [
   {
+    "id": "frantisek-kopriva",
     "foto": "frantisek-kopriva.png",
     "name": "František Kopřiva",
     "age": 20,
@@ -10,6 +11,7 @@
     "profil": "https://strednicechy.pirati.cz/lide/frantisek-kopriva/",
   },
   {
+    "id": "michal-horak",
     "foto": "michal-horak.jpg",
     "name": "Milan Horák",
     "age": 51,
@@ -20,6 +22,7 @@
     "profil": "https://www.pirati.cz/lide/michal_horak",
   },
   {
+    "id": "josef-korinek",
     "foto": "josef-korinek.png",
     "name": "Josef Kořínek",
     "age": 33,
@@ -30,6 +33,7 @@
     "profil": "https://www.pirati.cz/lide/josef_korinek",
   },
   {
+    "id": "lukas-barton",
     "foto": "lukas-barton.png",
     "name": "Lukáš Bartoň",
     "age": 35,
@@ -40,7 +44,8 @@
     "profil": "https://www.pirati.cz/lide/lukas_barton",
   },
   {
-    "foto": "$1.jpg",
+    "id": "michal-berg",
+    "foto": "michal-berg.jpg",
     "name": "BcA. Michal Berg",
     "age": 36,
     "profese": "zastupitel města, konzultant",
@@ -50,6 +55,7 @@
     "profil": "http://www.otevrenykraj.cz/kandidatka/",
   },
   {
+    "id": "martin-hanousek",
     "foto": "martin-hanousek.png",
     "name": "Mgr Martin Hanousek",
     "age": 33,
@@ -60,6 +66,7 @@
     "profil": "http://www.piratiazeleni.cz/kandidati/martin_hanousek",
   },
   {
+    "id": "ondrej-kolek",
     "foto": "ondrej-kolek.png",
     "name": "Ondřej Kolek",
     "age": 37,
@@ -70,6 +77,7 @@
     "profil": "https://www.pirati.cz/lide/ondrej_kolek",
   },
   {
+    "id": "martin-smida",
     "foto": "martin-smida.png",
     "name": "Ing. et Ing. Martin Šmída",
     "age": 31,
@@ -80,6 +88,7 @@
     "profil": "https://www.pirati.cz/lide/martin_smida",
   },
   {
+    "id": "lukas-cernohorsky",
     "foto": "lukas-cernohorsky.png",
     "name": "Ing. Lukáš Černohorský",
     "age": 32,
@@ -90,6 +99,7 @@
     "profil": "https://www.pirati.cz/lide/lukas_cernohorsky",
   },
   {
+    "id": "daniel-pitek",
     "foto": "daniel-pitek.png",
     "name": "Daniel Pitek",
     "age": 49,
@@ -100,6 +110,7 @@
     "profil": "https://cs.wikipedia.org/wiki/Daniel_Pitek",
   },
   {
+    "id": "josef-janu",
     "foto": "josef-janu.png",
     "name": "Ing. Josef Janů",
     "age": 47,
@@ -110,6 +121,7 @@
     "profil": "https://www.pirati.cz/lide/josef_janu",
   },
   {
+    "id": "jakub-kutilek",
     "foto": "jakub-kutilek.png",
     "name": "Ing. Jakub Kutílek",
     "age": 30,
@@ -120,6 +132,7 @@
     "profil": "http://www.prootevrenykraj.cz/jakub-kutilek/",
   },
   {
+    "id": "jiri-hlavenka",
     "foto": "jiri-hlavenka.png",
     "name": "Jiří Hlavenka",
     "age": 52,

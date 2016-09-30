@@ -1,5 +1,6 @@
 [
   {
+    "id": "jiri-demel",
     "foto": "jiri-demel.png",
     "name": "Jiří Demel ",
     "age": 59,
@@ -11,6 +12,7 @@
     "profil": "http://www.jiridemel.cz/"
   },
   {
+    "id": "petr-kral",
     "foto": "petr-kral.png",
     "name": "Petr Král",
     "age": 67,
@@ -22,6 +24,7 @@
     "profil": "http://pirati.sobeslav.cz/tag/ing-petr-kral/"
   },
   {
+    "id": "tomas-novak",
     "foto": "tomas-novak.png",
     "name": "Tomáš Novák",
     "age": 48,
@@ -33,6 +36,7 @@
     "profil": "https://www.pirati.cz/lide/tomas_novak"
   },
   {
+    "id": "jan-becher",
     "foto": "jan-becher.png",
     "name": "Jan Becher",
     "age": 40,
@@ -44,6 +48,7 @@
     "profil": "http://www.piratskelisty.cz/clanek-1574-jan-becher-postavit-se-za-nasi-svobodu-vnimam-jako-povinnost"
   },
   {
+    "id": "jan-holasek",
     "foto": "jan-holasek.png",
     "name": "Jan Holásek",
     "age": 43,
@@ -55,6 +60,7 @@
     "profil": "http://www.janholasek.cz/"
   },
   {
+    "id": "renata-chmelova",
     "foto": "renata-chmelova.png",
     "name": "Renata Chmelová",
     "age": 45,
@@ -66,6 +72,7 @@
     "profil": "http://renatachmelova.cz/"
   },
   {
+    "id": "ladislav-kos",
     "foto": "ladislav-kos.png",
     "name": "Ladislav Kos",
     "age": 58,
@@ -77,6 +84,7 @@
     "profil": "http://www.kosdosenatu.cz/"
   },
   {
+    "id": "martin-hausenblas",
     "foto": "martin-hausenblas.png",
     "name": "Martin Hausenblas",
     "age": 42,
