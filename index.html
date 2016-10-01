@@ -38,7 +38,7 @@ layout: default
             <!-- https://www.pirati.cz/tiskove-zpravy/pirati_predstavuji_krajske_lidry -->
             <p>Pirátská strana představuje lídry kandidátek pro krajské volby 2016, které letos proběhnou 7. a 8. října. Piráti kandidují ve všech krajích, ve většině republiky samostatně, v některých krajích spojili síly v rámci koalice se Stranou Zelených,
                 Změnou či regionálními hnutími. Mezi kandidáty na post hejtmana se vyskytují například průkopník internetového podnikání v Česku Jiří Hlavenka nebo bývalý předseda Pirátů Lukáš Černohorský. Pro všechny představuje stěžejní téma otevřenost
-                a transparence, které ve spoustě krajích v praxi stále doposud nefungují a vedou k vysoké zadluženosti krajů, druhé klíčové téma Pirátů pro krajské volby je modernizace státní správy. Společný program pro krajské volby 2016 jsme představili
+                a transparence, které ve spoustě krajích v praxi stále doposud nefungují a vedou k vysoké zadluženosti krajů, druhé klíčové téma Pirátů pro krajské volby je modernizace státní správy. <a href="#program">Společný program pro krajské volby 2016</a> jsme představili
                 v červnu.</p>
             <p style="font-weight: 550">{% for leader in leaders %}<a data-open="{{leader.id}}">{{ leader.region}}</a> / {% endfor %}</p>
         </div>
@@ -103,7 +103,7 @@ layout: default
 <div class="row">
     <section class="o-section o-section--spaceBot">
         <div class="columns large-12">
-          <h2 class="o-section__heading">Společný program pro krajské volby 2016</h2>
+          <h2 class="o-section__heading" id="program">Společný program pro krajské volby 2016</h2>
           <!-- https://www.pirati.cz/volby/2016/program -->
           <p>Naším cílem je kraj nové generace, kde může každý člověk svůj život prožít svobodně a naplno. Klíčem k prosperitě naší společnosti je otevřenost, transparentnost, svoboda informací, kvalitní veřejné služby, použití nových technologií a zapojení
               občanů do rozhodování. Piráti nabízí alternativu kraje bez korupce, nesmyslných dotací, politických trafik a klientelismu. Chceme, aby krajské úřady nebyly pro aktivní občany byrokratickou překážkou, nýbrž příležitostí zapojit se do veřejného
@@ -112,6 +112,6 @@ layout: default
         <div class="medium-12 large-8 columns">
             {% include program.html %}
         </div>
-            {% include program/content.html %}
+        {% include program/content.html %}
     </section>
 </div>
