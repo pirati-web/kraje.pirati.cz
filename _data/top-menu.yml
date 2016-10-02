@@ -5,7 +5,7 @@
   url: https://forum.pirati.cz
   icon: fa fa-comments
 - link: Volné úkoly
-  url: https://ukoly.pirati.cz
+  url: https://redmine.pirati.cz/issues?query_id=29
   icon: fa fa-tasks
 - link: Pirátské listy
   url: http://www.piratskelisty.cz
