@@ -9,9 +9,7 @@
 title: Rozcestník Pirátů pro krajské volby 2016
 email: to@pirati.cz
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Cílem České pirátské strany je na prvním místě prosazování základního lidského práva člověka na svobodné šíření přijaté informace a striktní ochranu soukromí občana jako odraz změněné reality informační společnosti 21. století. K dosažení tohoto cíle je nutná revize kopírovacího monopolu tak, aby se nemohl stát záminkou pro útoky na svobodu Internetu.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://kraje.pirati.cz" # the base hostname & protocol for your site
 twitter_username: jekyllrb
