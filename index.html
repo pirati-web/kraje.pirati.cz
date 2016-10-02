@@ -3,19 +3,115 @@ layout: default
 ---
 
 <div class="row">
-  <div class="medium-12">
-    <p>Piráti v letošních krajských volbách kandidují ve všech regionech s výjimkou Prahy, kde už Piráti v zastupitelstvu sedí, a volí se tam pouze do Senátu. V osmi krajích kandidujeme samostatně a v pěti krajích v koalici s dalšími subjekty. Kliknutím na mapku se dostanete na volební web Pirátů v příslušném regionu. Děkujeme za podporu!</p>
-
-    <p><a href="https://www.pirati.cz/volby/2016/program">Společná část programu Pirátů pro krajské volby</a></p>
-    
-    <p><a href="https://www.pirati.cz/tiskove-zpravy/pirati_predstavuji_krajske_lidry">Představení krajských lídrů</a></p>
-  </div>
+    <img class="hide-for-small-only" src="{{'banner_desktop.jpg' | prepend: 'assets/img/' | prepend: site.baseurl }}">
+    <img class="show-for-small-only" src="{{'banner_mobile.jpg' | prepend: 'assets/img/' | prepend: site.baseurl }}">
 </div>
-<div class="row">
-  <div class="large-7 columns hide-for-small-only">
-      <div id="paper" class=""></div>
-  </div>
-  <div class="large-5 columns" style="margin-top: 40px;">
-    <ul id="regions-list">
+<section>
+    <div class="row" style="background-color: lightgray;">
+        <div class="large-7 columns hide-for-small-only">
+            <div id="paper" class=""></div>
+        </div>
+        <div class="large-5 columns" style="margin-top: 40px;">
+            <article class="c-BlogPosting" style="background-color: white; margin-top: 40px; margin-right: 20px">
+                <div class="row c-BlogPosting-content">
+                    <h3 style="margin-left: 45px">Kraje</h3>
+                    <div class="columns small-6">
+                        <ul id="regions-list" style="margin-left: 25px">
+                        </ul>
+                    </div>
+                    <div class="columns small-6">
+                        <ul id="regions-list-2">
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="o-section o-section--spaceBot">
+  {% assign leaders = site.data.region-leaders %}
+  {% include modals.html param='leaders' %}
+    <div class="row">
+        <div class="medium-12 columns">
+            <h2 class="o-section__heading">Piráti představují krajské lídry</h2>
+            <!-- https://www.pirati.cz/tiskove-zpravy/pirati_predstavuji_krajske_lidry -->
+            <p>Pirátská strana představuje lídry kandidátek pro krajské volby 2016, které letos proběhnou 7. a 8. října. Piráti kandidují ve všech krajích, ve většině republiky samostatně, v některých krajích spojili síly v rámci koalice se Stranou Zelených,
+                Změnou či regionálními hnutími. Mezi kandidáty na post hejtmana se vyskytují například průkopník internetového podnikání v Česku Jiří Hlavenka nebo bývalý předseda Pirátů Lukáš Černohorský. Pro všechny představuje stěžejní téma otevřenost
+                a transparence, které ve spoustě krajích v praxi stále doposud nefungují a vedou k vysoké zadluženosti krajů, druhé klíčové téma Pirátů pro krajské volby je modernizace státní správy. <a href="#program">Společný program pro krajské volby 2016</a> jsme představili
+                v červnu.</p>
+            <p style="font-weight: 550">{% for leader in leaders %}<a data-open="{{leader.id}}">{{ leader.region}}</a> / {% endfor %}</p>
+        </div>
+    </div>
+
+  <div class="orbit" role="region" aria-label="Krajští lídři" data-orbit>
+    <ul class="orbit-container">
+        <button class="orbit-previous"><span class="show-for-sr">Předchozí</span>&#9664;&#xFE0E;</button>
+        <button class="orbit-next"><span class="show-for-sr">Další</span>&#9654;&#xFE0E;</button>
+        {% for leader in leaders %}
+        <li class="orbit-slide{% if forloop.first%} is-active{% endif %}">
+            {% include candidate1.html param='leader' %}
+        </li>
+        {% endfor %}
     </ul>
+    <nav class="orbit-bullets" style="">
+      {% for leader in leaders %}
+      <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}">
+        <span class="show-for-sr">{{leader.region}}</span>
+      </button>
+      {% endfor %}
+    </nav>
+  </div>
+</section>
+
+<section class="o-section o-section--spaceBot">
+  {% assign leaders = site.data.senate-candidates %}
+  {% include modals.html param='leaders' %}
+  <div class="row">
+      <div class="medium-12 columns">
+          <section class="o-section o-section--spaceBot">
+              <h2 class="o-section__heading">Piráti představují kandidáty do Senátu</h2>
+              <!-- https://www.pirati.cz/tiskove-zpravy/pirati_predstavuji_kandidaty_do_senatu -->
+              <p>Vedle krajských voleb se v třetině volebních obvodů konají i volby senátní, jejichž první kolo proběhne 7. a 8. října, druhé kolo následující víkend 15. a 16. října. Do voleb jde s podporou Pirátů osm různých kandidátů napříč republikou.
+                  Lukáš Černohorský, bývalý předseda Pirátů, navíc podal kandidaturu s cílem zpochybnit věkovou hranici pro senátní volby. Mezi kandidáty s podporou Pirátů najdeme aktivistku zaměřenou na zapojování veřejnosti do rozhodování, vedoucího
+                  Českého horologického spolku, který propojuje svoji vášeň pro informatiku se zájmem o staré hodiny, nebo zakladatele sdružení Podnikáme bez korupce.</p>
+            <p style="font-weight: 550">{% for leader in leaders %}<a data-open="{{leader.id}}">{{ leader.region}}</a> / {% endfor %}</p>
+          </section>
+      </div>
+  </div>
+
+  <div class="orbit" role="region" aria-label="Krajští lídři" data-orbit>
+      <ul class="orbit-container">
+        <button class="orbit-previous"><span class="show-for-sr">Předchozí</span>&#9664;&#xFE0E;</button>
+        <button class="orbit-next"><span class="show-for-sr">Další</span>&#9654;&#xFE0E;</button>
+        {% for leader in leaders %}
+        <li class="orbit-slide{% if forloop.first%} is-active{% endif %}">
+            {% include candidate1.html param='leader' %}
+        </li>
+        {% endfor %}
+    </ul>
+    <nav class="orbit-bullets">
+      {% for leader in leaders %}
+      <button data-slide="{{forloop.index0}}" class="{% if forloop.first %}is-active{% endif %}">
+        <span class="show-for-sr">{{leader.region}}</span>
+      </button>
+      {% endfor %}
+    </nav>
+  </div>
+</section>
+
+<div class="row">
+    <section class="o-section o-section--spaceBot">
+        <div class="columns large-12">
+          <h2 class="o-section__heading" id="program">Společný program pro krajské volby 2016</h2>
+          <!-- https://www.pirati.cz/volby/2016/program -->
+          <p>Naším cílem je kraj nové generace, kde může každý člověk svůj život prožít svobodně a naplno. Klíčem k prosperitě naší společnosti je otevřenost, transparentnost, svoboda informací, kvalitní veřejné služby, použití nových technologií a zapojení
+              občanů do rozhodování. Piráti nabízí alternativu kraje bez korupce, nesmyslných dotací, politických trafik a klientelismu. Chceme, aby krajské úřady nebyly pro aktivní občany byrokratickou překážkou, nýbrž příležitostí zapojit se do veřejného
+              dění a kultivace svého okolí.</p>
+        </div>
+        <div class="medium-12 large-8 columns">
+            {% include program.html %}
+        </div>
+        {% include program/content.html %}
+    </section>
 </div>

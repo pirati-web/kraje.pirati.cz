@@ -24,19 +24,27 @@
         var settings = {{ site.data.kraje-settings | jsonify }};
         var regions = {{ site.data.kraje | jsonify }};
 
-        $(settings.id).width(settings.size.width)
+        $(settings.id).width(settings.size.width);
         $(settings.id).height(settings.size.height);
         var R = Raphael(settings.id, settings.size.width, settings.size.height);
 
 
-        $("#region-description>div").hide()
+        $("#region-description>div").hide();
 
         var marked = null;
+        var i = 0;
         var reg_list = $('#regions-list');
+        var reg_list2 = $('#regions-list-2');
 
         $.each(regions, function(index, region) {
-          var li = $('<li/>').appendTo(reg_list);
-          var span = $('<a/>').text(region.name).attr('href',region.url).appendTo(li);
+          if(i < 7 ) {
+            var li = $('<li/>').appendTo(reg_list);
+            var span = $('<a/>').text(region.name).attr('href',region.url).appendTo(li);
+          } else {
+            var li2 = $('<li/>').appendTo(reg_list2);
+            var span2 = $('<a/>').text(region.name).attr('href',region.url).appendTo(li2);
+          }
+          i++;
 
           /* Create path for one region */
           var custom_attrs = {"title": region.name};
@@ -60,16 +68,16 @@
               /* Functions */
               var click = function() {
                 window.open(region.url);
-              }
+              };
               var dblclick = function() {
                 window.open(region.url);
-              }
+              };
               var over = function() {
                 path.animate({fill: region.color}, 500).attr({'cursor': "pointer"});
-              }
+              };
               var out = function() {
                 path.animate({fill: "#333"}, 500);
-              }
+              };
 
               path[0].onclick = click;
               path[0].ondblclick = dblclick;
