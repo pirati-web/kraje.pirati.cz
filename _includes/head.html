@@ -3,9 +3,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <title>Pirátská strana - Pirati.cz</title>
+
+    <!-- social metas -->
+    <meta property="og:title" content="Česká pirátská strana - Pirati.CZ">
+    <meta property="og:site_name" content="Pirati.CZ"/>
+    <meta property="og:url" content="https://www.pirati.cz/portal">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" content="https://www.pirati.cz/lib/tpl/pirati/images/fblogotyp.png"/>
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image" content="https://www.pirati.cz/lib/tpl/pirati/images/fblogo.png"/>
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:description" content="Cílem Pirátské strany je na prvním místě prosazování základního práva člověka na svobodné šíření informací a striktní ochranu soukromí občana."/>
+    <meta property="fb:admins" content="1609075674"/>
+    <meta property="fb:admins" content="1734211895"/>
+    <meta property="fb:admins" content="1507905830"/>
 
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="pirati">
+
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ 'assets/favicon/apple-touch-icon-57x57.png' | prepend: site.baseurl }}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ 'assets/favicon/apple-touch-icon-114x114.png' | prepend: site.baseurl  }}">
