@@ -9,9 +9,9 @@
 title: Rozcestník Pirátů pro krajské volby 2016
 email: to@pirati.cz
 description: > # this means to ignore newlines until "baseurl:"
-  Cílem České pirátské strany je na prvním místě prosazování základního lidského práva člověka na svobodné šíření přijaté informace a striktní ochranu soukromí občana jako odraz změněné reality informační společnosti 21. století. K dosažení tohoto cíle je nutná revize kopírovacího monopolu tak, aby se nemohl stát záminkou pro útoky na svobodu Internetu.
+  Naším cílem je kraj nové generace, kde může každý člověk svůj život prožít svobodně a naplno. Klíčem k prosperitě naší společnosti je otevřenost, transparentnost, svoboda informací, kvalitní veřejné služby, použití nových technologií a zapojení občanů do rozhodování. Piráti nabízí alternativu kraje bez korupce, nesmyslných dotací, politických trafik a klientelismu. Chceme, aby krajské úřady nebyly pro aktivní občany byrokratickou překážkou, nýbrž příležitostí zapojit se do veřejného dění a kultivace svého okolí.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://kraje.pirati.cz" # the base hostname & protocol for your site
+url: "http://www.pirati.cz" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
